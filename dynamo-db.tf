@@ -29,12 +29,7 @@ resource "aws_dynamodb_table" "extractor" {
     type = "S"
   }
 
-  attribute {
-    name = "expirationTime"
-    type = "N"  
-  }
-
-  time_to_live {
+  ttl {
     attribute_name = "expirationTime"
     enabled        = true
   }
